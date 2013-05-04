@@ -10,8 +10,8 @@ module.exports = function (grunt) {
 
   // configurable paths
   var paths = {
-    app: 'app',
-    dist: 'www'
+    app: 'www',
+    dist: 'dist'
   };
 
   try {

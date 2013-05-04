@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
-www
-app/components
+dist
+www/components
 !.gitkeep
+npm-debug.log
