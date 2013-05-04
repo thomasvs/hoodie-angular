@@ -7,12 +7,13 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'app/components/angular/angular.js',
-  'app/components/angular-mocks/angular-mocks.js',
-  'app/components/jquery/jquery.js',
-  'app/components/hoodie/hoodie.js',
-  'app/scripts/*.js',
-  'app/scripts/**/*.js',
+  'www/components/angular/angular.js',
+  'www/components/angular-mocks/angular-mocks.js',
+  'www/components/angular-bootstrap/ui-bootstrap-tpls.js',
+  'www/components/jquery/jquery.js',
+  'www/components/hoodie/hoodie.js',
+  'www/scripts/*.js',
+  'www/scripts/**/*.js',
   'test/mock/**/*.js',
   'test/spec/**/*.js'
 ];
