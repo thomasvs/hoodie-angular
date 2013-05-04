@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="components/bootstrap/docs/assets/css/bootstrap.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="hoodieApp" ng-init="appName = '{{hoodie_appname}}'">
+  <body ng-app="hoodieApp" ng-init="appName = '{{hoodie_appname}}'" ng-controller="AppCtrl">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -29,7 +29,7 @@
       <div class="navbar-inner">
         <div class="container">
           <a href="#" class="brand" ng-bind="appName"></a>
-          <a href="#modal" rootle="button" class="btn btn-small pull-right" data-toggle="modal">Sign in</a>
+          <a href="#modal" rootle="button" class="btn btn-small pull-right" ng-click="login()">Sign in</a>
           <p class="welcome navbar-text pull-right"></p>
         </div>
       </div>
@@ -37,9 +37,6 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
-
-    <!-- Login -->
-    <div id="modal" class="login modal hide fade in" aria-hidden="false"></div>
 
     <script src="components/jquery/jquery.js"></script>
     <script src="components/hoodie/hoodie.js"></script>
@@ -49,6 +46,8 @@
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>

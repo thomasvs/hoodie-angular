@@ -1,6 +1,27 @@
 'use strict';
 
 angular.module('hoodieApp')
+	.controller('AppCtrl',['$scope', '$dialog', function($scope, $dialog){
+		$scope.login = function(){
+
+			$dialog.dialog({
+				backdrop: true,
+				keyboard: true,
+				dialogFade: true,
+				dialogClass: 'modal login',
+				backdropFade: true,
+				backdropClick: true,
+				templateUrl: 'views/login.html',
+				controller: 'LoginCtrl'
+			}).open();
+
+		}
+	}])
+	.controller('LoginCtrl',['$scope', function($scope, dialog){
+		$scope.close = function(){
+			dialog.close();
+		}
+	}])
 	.controller('MainCtrl', ['$scope', 'hoodie', 'localStorage', function ($scope, hoodie) {
 		$scope.todo = { title: ''};
 		$scope.mail = { text: ''};

@@ -2,6 +2,10 @@ body{
   background: url('../images/pattern_130.gif');
 }
 
+.modal.login .modal-header{
+	border-bottom: none;
+}
+
 .welcome{
   margin-right: 20px;
 }
