@@ -17,11 +17,37 @@ angular.module('hoodieApp')
 
 		}
 	}])
-	.controller('LoginCtrl',['$scope', 'dialog', function($scope, dialog){
+
+	.controller('LoginCtrl',['$scope', 'hoodie', 'dialog', function($scope, hoodie, dialog){
+
+		$scope.alerts = [];
 		$scope.close = function(){
 			dialog.close();
 		}
+
+		$scope.signIn = function(email, password){
+			hoodie.account.signIn(email, password);
+		}
+
+		$scope.signUp = function(email, password, passwordConfirmation){
+			hoodie.account.signUp(email, password, passwordConfirmation);
+		}
+
+		hoodie.account.on('authenticated', $scope.close);
+		hoodie.account.on('signup', $scope.close);
+		hoodie.on('account:error:unauthenticated remote:error:unauthenticated', function(){
+			$scope.$apply(function(){
+				$scope.alerts.push({msg: 'Authentication Failed!'});
+			});
+		});
+
+		$scope.closeAlert = function(index) {
+			$scope.alerts.splice(index, 1);
+		};
+
 	}])
+
+
 	.controller('MainCtrl', ['$scope', 'hoodie', 'localStorage', function ($scope, hoodie) {
 		$scope.todo = { title: ''};
 		$scope.mail = { text: ''};

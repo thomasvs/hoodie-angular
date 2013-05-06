@@ -15,7 +15,9 @@ describe('3rd party dependencies', function () {
 		it('should return an instance of hoodie toolkit', function(){
 			expect(hoodie).not.toBeUndefined();
 		});
+
 	});
 
 });
+
 

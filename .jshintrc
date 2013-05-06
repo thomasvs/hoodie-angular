@@ -84,6 +84,8 @@
         "module",
         "require",
         "jasmine",
-        "spyOn"
+        "spyOn",
+        "runs",
+        "waitsFor"
     ]
 }
