@@ -1,5 +1,5 @@
 <div class="modal-header" ng-init="tabs.signup=true">
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <button type="button" class="close" ng-click="close()">×</button>
   <h3>Hoodie</h3>
 </div>
 
@@ -67,7 +67,7 @@
 </tabs>
 
 <div class="modal-footer">
-  <button type="submit" class="submit btn btn-primary" ng-show="{{tabs.signup}}">Sign Up</button>
+  <button type="submit" class="submit btn btn-primary" ng-show="tabs.signup">Sign Up</button>
   <button type="submit" class="submit btn btn-primary" ng-show="tabs.signin">Sign In</button>
   <button type="submit" class="submit btn btn-primary" ng-show="tabs.pw">Reset password</button>
   <button class="btn" ng-click="close()">Close</button>

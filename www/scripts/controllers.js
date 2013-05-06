@@ -8,8 +8,8 @@ angular.module('hoodieApp')
 				backdrop: true,
 				keyboard: true,
 				dialogFade: true,
-				dialogClass: 'modal login',
 				backdropFade: true,
+				dialogClass: 'modal login',
 				backdropClick: true,
 				templateUrl: 'views/login.html',
 				controller: 'LoginCtrl'
@@ -17,7 +17,7 @@ angular.module('hoodieApp')
 
 		}
 	}])
-	.controller('LoginCtrl',['$scope', function($scope, dialog){
+	.controller('LoginCtrl',['$scope', 'dialog', function($scope, dialog){
 		$scope.close = function(){
 			dialog.close();
 		}
