@@ -3,7 +3,8 @@
 angular.module('hoodieApp', ['hoodie-angular'])
   //App Configuration
   //
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, hoodieProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -12,6 +13,9 @@ angular.module('hoodieApp', ['hoodie-angular'])
       .otherwise({
         redirectTo: '/'
       });
+
+    hoodieProvider.setUrl('http://hoodie_appname.dev');
+
   }).
   //App Values injections
   //

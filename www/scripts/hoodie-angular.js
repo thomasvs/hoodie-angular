@@ -1,8 +1,26 @@
 'use strict';
 angular.module('hoodie-angular', ['ui.bootstrap']).
+
 	factory('hoodie', function () {
     return new Hoodie();
   }).
+
+	provider('hoodie',function(){
+
+		this.url = undefined;
+
+		this.setUrl = function(url){
+			this.url = url;
+		}
+
+		this.$get = [function(){
+			if(!this.url){
+				throw new Error('You should config hoodieProvider.url before requiring hoodie');
+			}
+			return new Hoodie(this.url);
+		}];
+	}).
+
 	directive('hoodieHideAuthenticated',['hoodie', function(hoodie){
 		return {
 			restrict: 'AC',
