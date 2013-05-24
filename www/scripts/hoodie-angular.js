@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('hoodie-angular', ['ui.bootstrap']).
 	factory('hoodie', function () {
     return new Hoodie();
