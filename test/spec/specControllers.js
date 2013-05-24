@@ -63,9 +63,9 @@ describe('Controllers', function () {
       expect(hoodie.account.signIn).toHaveBeenCalledWith('test', 'passwordTest');
     });
 
-    it('should close after when login success', function(){
+    it('should close when login success', function(){
 
-      spyOn(scope, 'close');
+      spyOn(dialog, 'close');
 
       spyOn(hoodie.account, 'signIn').andCallFake(function(){
         hoodie.account.trigger('authenticated');
@@ -73,7 +73,7 @@ describe('Controllers', function () {
 
       scope.signIn('test', 'passwordTest');
 
-      expect(scope.close).toHaveBeenCalled();
+      expect(dialog.close).toHaveBeenCalled();
 
     });
 

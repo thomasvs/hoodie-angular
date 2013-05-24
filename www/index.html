@@ -13,9 +13,10 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="components/bootstrap/docs/assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/docs/assets/css/docs.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="hoodieApp" ng-init="appName = '{{hoodie_appname}}'" ng-controller="AppCtrl">
+  <body ng-app="hoodieApp" ng-init="appName = '{{hoodie_appname}}'">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -29,8 +30,14 @@
       <div class="navbar-inner">
         <div class="container">
           <a href="#" class="brand" ng-bind="appName"></a>
-          <a rootle="button" class="btn btn-small pull-right" ng-click="login()">Sign in</a>
-          <p class="welcome navbar-text pull-right"></p>
+          <ul class="nav">
+            <li>
+              <button hoodie-signin-button></button>
+              <button hoodie-signout-button ></button>
+              <p hoodie-user-name class="navbar-text pull-right"></p>
+            </li>
+            <li class="divider-vertical"></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -54,6 +61,7 @@
     <script src="scripts/controllers.js"></script>
     <script src="scripts/services.js"></script>
     <script src="scripts/directives.js"></script>
+    <script src="scripts/hoodie-angular.js"></script>
     <!-- endbuild -->
 
   </body>

@@ -1,6 +1,6 @@
 {
-  "name": "hoodie_appname",
-  "version": "1.0.0",
+  "name": "{{hoodie_appname}}",
+  "version": "1.0.2",
   "type": "app",
   "dependencies": {
     "hoodie-app": "git://github.com/hoodiehq/hoodie-app.git",
@@ -33,10 +33,10 @@
   "engines": {
     "node": ">=0.8.0"
   },
-  "subdomain": "hoodie-hoodie_appname",
+  "subdomain": "hoodie-{{hoodie_appname}}",
   "domains": [
-    "admin.hoodie-hoodie_appname}.jit.su",
-    "couch.hoodie-hoodie_appname}.jit.su"
+    "admin.hoodie-{{hoodie_appname}}.jit.su",
+    "couch.hoodie-{{hoodie_appname}}.jit.su"
   ],
   "scripts": {
     "start": "node node_modules/hoodie-app/bin/start"

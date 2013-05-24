@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hoodieApp', ['ui.bootstrap'])
+angular.module('hoodieApp', ['hoodie-angular'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
