@@ -38,6 +38,8 @@ describe('Controllers', function () {
 
   describe('LoginCtrl', function(){
 
+    var mockPromisse = {fail:function(){}};
+
     var dialog = {
       close: function(){}
     }
@@ -52,13 +54,13 @@ describe('Controllers', function () {
     });
 
     it('should signup', function(){
-      spyOn(hoodie.account, 'signUp');
+      spyOn(hoodie.account, 'signUp').andReturn(mockPromisse);
       scope.signUp('test', 'passwordTest', 'passwordTest');
       expect(hoodie.account.signUp).toHaveBeenCalledWith('test', 'passwordTest', 'passwordTest');
     });
 
     it('should signin', function(){
-      spyOn(hoodie.account, 'signIn');
+      spyOn(hoodie.account, 'signIn').andReturn(mockPromisse);
       scope.signIn('test', 'passwordTest');
       expect(hoodie.account.signIn).toHaveBeenCalledWith('test', 'passwordTest');
     });
@@ -69,6 +71,7 @@ describe('Controllers', function () {
 
       spyOn(hoodie.account, 'signIn').andCallFake(function(){
         hoodie.account.trigger('authenticated');
+        return mockPromisse;
       });
 
       scope.signIn('test', 'passwordTest');
